@@ -131,12 +131,21 @@ public class lineDraw : MonoBehaviour
 
     public void UndoLine()
     {
-        //need to remove the end of the list twice because we need to remove the point that appears on the back
-        //when undo button is clicked as well
-        Destroy(lines[lines.Count - 1]);
-        lines.RemoveAt(lines.Count - 1);
-        Destroy(lines[lines.Count - 1]);
-        lines.RemoveAt(lines.Count - 1);
+        //check if list is empty
+        if (lines.Count > 1)
+        {
+            //need to remove the end of the list twice because we need to remove the point that appears on the back
+            //when undo button is clicked as well
+            Destroy(lines[lines.Count - 1]);
+            lines.RemoveAt(lines.Count - 1);
+            Destroy(lines[lines.Count - 1]);
+            lines.RemoveAt(lines.Count - 1);
+        }
+        else
+        {
+            Destroy(lines[lines.Count - 1]);
+            lines.RemoveAt(lines.Count - 1);
+        }
     }
 
     public void DeleteAll()

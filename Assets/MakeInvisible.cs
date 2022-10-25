@@ -29,13 +29,13 @@ public class MakeInvisible : MonoBehaviour
 
     public void ActivateButtons()
     {
-        Debug.Log("increased alpha to 1");
+        //Debug.Log("increased alpha to 1");
         canvasGroup.alpha = 1;
     }
 
     public void DisableButtons()
     {
-        Debug.Log("decreased alpha to 0");
+       // Debug.Log("decreased alpha to 0");
         canvasGroup.alpha = 0;
     }
 }
